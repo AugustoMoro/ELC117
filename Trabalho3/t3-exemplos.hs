@@ -30,13 +30,13 @@ strToInt x =
 			e = map(10^)([0,1..]);
 		in if(c == True) then (sum $ zipWith (*) (reverse d) e) else 0
 
-sumMult :: [Int]->Int
-sumMult x = sum $ filter(>10) $ map(2*)x -- Soma todos elementos maiores que 10 de uma lista de numeros multiplicada por 2 
+sumMult :: [Int]->Int -- Soma todos elementos maiores que
+sumMult x = sum $ filter(>10) $ map(2*)x  -- 10 de uma lista de numeros multiplicada por 2 
 
 -- Composição de funções
 
-menosSin :: [Float]->[Float] -- Calcula o seno de uma lista de numeros e inverte o sinal do resultado
-menosSin x = map(negate . sin) x
+menosSin :: [Float]->[Float] -- Calcula o seno de uma lista de
+menosSin x = map(negate . sin) x -- numeros e inverte o sinal do resultado
 
 raizReal :: [Float]->[Float] -- Recebe uma lista de numeros, se hoverem numeros negativos,
 raizReal x = map(sqrt . abs)x -- inverte e os transforma para positivos e por ultimo calcula sua raiz quadrada
