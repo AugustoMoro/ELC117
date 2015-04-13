@@ -31,10 +31,10 @@ main = do
     strcontent <- readFile infile				-- lê conteúdo do arquivo em string
     let strlist = map (splitOnChar ';') (lines strcontent);	-- extrai linhas e quebra cada uma delas
         itemlist = map (toGalleryItem) strlist;
-        htlD = map(geraHtmlDesc) itemlist;
-        htlImg = geraHtmlImage(galleryItems);
-        concatena = zipWith (++) htlImg htlD;
-    writeFile outfile (cabecalho ++ unlines concatena ++ "</div></body></html>");
+        htlD = map(geraHtmlDesc) itemlist; -- cria um link para cada descrição/autor/titulo
+        htlImg = geraHtmlImage(galleryItems); -- cria um link para cada imagem
+        concatena = zipWith (++) htlImg htlD; -- concatena tudo em uma grande string
+    writeFile outfile (cabecalho ++ unlines concatena ++ "</div></body></html>"); -- grava no template.html
     where 
     infile = "data.csv"
     outfile = "template.html"
