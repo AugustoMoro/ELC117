@@ -18,21 +18,21 @@ main = do
 mkHtmlURLItemsDoc :: String -> [(String,String)] -> String
 mkHtmlURLItemsDoc title lis = "Usuarios Cadastrados no NCC\n" ++ "<html><body><ul>" ++ concat(geraHtml lis) ++ "<ul><body><html>"
 
-geraHtml :: [(String,String)]->[String] 
+geraHtml :: [(String,String)] -> [String] 
 geraHtml x = 
 		let a = map(fst) x;
 			b = map(snd) x;
 			c = concatLogin b;
 			d = concatNome c a;
-		in map(++"</a></li>\n")d;
+		in map(++"</a></li>\n") d;
 		
-concatNome :: [String]->[String]->[String]
+concatNome :: [String] -> [String] -> [String]
 concatNome x y = zipWith (++) x y
 		
-concatLogin :: [String]->[String]
+concatLogin :: [String] -> [String]
 concatLogin x = 
-		let a = map("<li><a href=http://www.inf.ufsm.br/~"++)x;
-		in map(++">")a;
+		let a = map("<li><a href=http://www.inf.ufsm.br/~"++) x;
+		in map(++">") a;
 		
 -- Decompoe string usando um caracter delimitador
 splitOnChar :: Char -> String -> [String]
