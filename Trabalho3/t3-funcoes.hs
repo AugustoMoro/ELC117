@@ -19,6 +19,15 @@ userName nome =
 		let sobre = takeWhile(/=' ')(reverse nome)
 		in map(toLower)([(head nome)] ++ (reverse(sobre)))
 
+encodeName :: String -> String
+encodeName x = concat (map (troca) x)
+	where troca x
+		| x == 'a' || x == 'A' = "4"
+		| x == 'e' || x == 'E' = "3" 
+		| x == 'i' || x == 'I' = "1" 
+		| x == 'o' || x == 'O' = "0" 
+		| x == 'u' || x == 'U' = "00"
+		| otherwise = [x]
 
 isElem :: Int->[Int]->Bool
 isElem x y = elem x y
@@ -60,12 +69,3 @@ strToInt x =
 			e = map(10^)([0,1..]);
 		in if(c == True) then (sum (zipWith (*) (reverse d) e)) else 0
 
-encodeName :: String -> String
-encodeName x = concat (map (troca) x)
-	where troca x
-		| x == 'a' || x == 'A' = "4"
-		| x == 'e' || x == 'E' = "3" 
-		| x == 'i' || x == 'I' = "1" 
-		| x == 'o' || x == 'O' = "0" 
-		| x == 'u' || x == 'U' = "00"
-		| otherwise = [x]
