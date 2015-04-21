@@ -64,5 +64,8 @@ vitima(anita).
 
 namorou(X,Y) :- casal(X,Y) , casal(Y,X).
 ciumes(X,Y) :- namorou(Z,X) , namorou(Y,Z).
+localcrime(X,Y) :- sexta(X,apartamento) ; quinta(X,apartamento).
+rouboarma(X,Y) :- quinta(X,portoalegre) ; quarta(X,santamaria) ; quarta(X,apartamento) ; quinta(X,apartamento).
+roubochave(X,Y) :- quarta(X,santamaria) ; terca(X,portoalegre).
 
 
