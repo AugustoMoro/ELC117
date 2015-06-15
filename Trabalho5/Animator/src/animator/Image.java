@@ -49,6 +49,7 @@ class Image {
     public void move(double ang) {
        String a = "Line";
        String b = "Circle";
+       String c = "Movimento4";
        if(path == a){
            pos.x += 2;
            if(pos.x>(lar-100))
@@ -58,5 +59,14 @@ class Image {
            pos.x = (int) (origem.x + 50 * cos(ang));
            pos.y = (int) (origem.y + 50 * sin(ang));
        }
+       if(path == c){
+            pos.x += 2;
+            if(pos.x>=(lar-100)){
+                pos.x = 0;
+                pos.y += 100;
+                if(pos.y>=(alt-100))
+                    pos.y = 50;
+            }
+        }
     }
 }
