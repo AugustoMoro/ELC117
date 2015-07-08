@@ -11,6 +11,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -25,10 +26,10 @@ public class Interface extends javax.swing.JFrame {
     
     /**
      * Creates new form Interface
-     */
-    ArrayList<Personagem> p; 
+     */ 
+    InterfaceController control;
     public Interface() {
-        p = new ArrayList<Personagem>();
+        control = new InterfaceController(this);
         initComponents();
     }
 
@@ -577,8 +578,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_TercaActionPerformed
 
     private void ad_personActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ad_personActionPerformed
-        Personagem x = new Personagem(jogador.getText(), personagem.getText(), raca.getSelectedItem().toString(), classe.getSelectedItem().toString(), (int)level_person.getValue(), profissao.getSelectedItem().toString(), (int)level_prof.getValue(), especialidade.getSelectedItem().toString(), horario.getText());
-        p.add(x);
+        control.add_person_array();
     }//GEN-LAST:event_ad_personActionPerformed
 
     private void personagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personagemActionPerformed
@@ -713,8 +713,250 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JComboBox raca;
     // End of variables declaration//GEN-END:variables
 
-    public void setjTable1(JTable jTable1) {
-        this.jTable1 = jTable1;
+    public JCheckBox getDomingo() {
+        return Domingo;
     }
+
+    public JCheckBox getQuarta() {
+        return Quarta;
+    }
+
+    public JCheckBox getQuinta() {
+        return Quinta;
+    }
+
+    public JCheckBox getSabado() {
+        return Sabado;
+    }
+
+    public JCheckBox getSegunda() {
+        return Segunda;
+    }
+
+    public JCheckBox getSexta() {
+        return Sexta;
+    }
+
+    public JCheckBox getTerca() {
+        return Terca;
+    }
+
+    public JButton getAd_person() {
+        return ad_person;
+    }
+
+    public JComboBox getClasse() {
+        return classe;
+    }
+
+    public JComboBox getEspecialidade() {
+        return especialidade;
+    }
+
+    public JTextField getHorario() {
+        return horario;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public JButton getjButton3() {
+        return jButton3;
+    }
+
+    public JButton getjButton5() {
+        return jButton5;
+    }
+
+    public JComboBox getjComboBox5() {
+        return jComboBox5;
+    }
+
+    public JComboBox getjComboBox6() {
+        return jComboBox6;
+    }
+
+    public JComboBox getjComboBox7() {
+        return jComboBox7;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    public JLabel getjLabel18() {
+        return jLabel18;
+    }
+
+    public JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    public JLabel getjLabel21() {
+        return jLabel21;
+    }
+
+    public JLabel getjLabel22() {
+        return jLabel22;
+    }
+
+    public JLabel getjLabel23() {
+        return jLabel23;
+    }
+
+    public JLabel getjLabel24() {
+        return jLabel24;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public JPanel getjPanel6() {
+        return jPanel6;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JSpinner getjSpinner1() {
+        return jSpinner1;
+    }
+
+    public JSpinner getjSpinner2() {
+        return jSpinner2;
+    }
+
+    public JSpinner getjSpinner3() {
+        return jSpinner3;
+    }
+
+    public JSpinner getjSpinner4() {
+        return jSpinner4;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public JTextField getjTextField6() {
+        return jTextField6;
+    }
+
+    public JTextField getjTextField7() {
+        return jTextField7;
+    }
+
+    public JTextField getJogador() {
+        return jogador;
+    }
+
+    public JSpinner getLevel_person() {
+        return level_person;
+    }
+
+    public JSpinner getLevel_prof() {
+        return level_prof;
+    }
+
+    public JTextField getPersonagem() {
+        return personagem;
+    }
+
+    public JComboBox getProfissao() {
+        return profissao;
+    }
+
+    public JComboBox getRaca() {
+        return raca;
+    }
+
+    
 
 }
